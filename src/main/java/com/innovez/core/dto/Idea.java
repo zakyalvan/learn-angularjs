@@ -32,5 +32,10 @@ public class Idea implements Serializable {
 	}
 	public void setVotes(long votes) {
 		this.votes = votes;
-	}   
+	}
+	@Override
+	public String toString() {
+		return "Idea [id=" + id + ", title=" + title + ", description="
+				+ description + ", votes=" + votes + "]";
+	}
 }
