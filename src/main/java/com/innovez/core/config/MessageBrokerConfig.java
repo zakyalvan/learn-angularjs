@@ -6,6 +6,15 @@ import org.springframework.web.socket.config.annotation.AbstractWebSocketMessage
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
+/**
+ * Configuration of simple STOMP message broker over WebSocket.
+ * 
+ * <p><strong>NOTE</strong> This configuration should be loaded in root
+ * application context instead of dispatcher servlet application context.
+ * 
+ * @author zakyalvan
+ *
+ */
 @Configuration
 @EnableWebSocketMessageBroker
 public class MessageBrokerConfig extends AbstractWebSocketMessageBrokerConfigurer {
