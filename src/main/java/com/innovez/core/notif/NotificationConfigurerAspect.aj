@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
  * @author zakyalvan
  */
 public aspect NotificationConfigurerAspect {
-	@Autowired(required=false)
+	@Autowired
 	private SimpMessagingTemplate messagingTemplate;
 	
 	private final String WEBSOCKET_TOPIC = "/topic/notify";

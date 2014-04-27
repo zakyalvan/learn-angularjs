@@ -12,7 +12,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>com.innovez.core.config.CoreAppConfig</param-value>
+		<param-value>com.innovez.core.config.CoreAppConfig, com.innovez.web.config.MessageBrokerConfig</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -48,7 +48,7 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>com.innovez.web.config.WebAppConfig, com.innovez.web.WebSocketConfig</param-value>
+			<param-value>com.innovez.web.config.WebAppConfig</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

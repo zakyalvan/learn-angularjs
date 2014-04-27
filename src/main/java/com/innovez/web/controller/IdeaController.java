@@ -17,7 +17,7 @@ import com.innovez.core.notif.NotifyClients;
 import com.innovez.core.service.IdeaService;
 
 @Controller
-@RequestMapping(value="/")
+@RequestMapping(value="")
 public class IdeaController {
 	private Logger logger = Logger.getLogger(IdeaController.class);
 	
