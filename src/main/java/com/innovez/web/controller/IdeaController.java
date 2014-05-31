@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,15 +25,15 @@ public class IdeaController {
 	@Autowired
 	private IdeaService ideaService;
 	
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(value={"", "/"}, method=RequestMethod.GET)
 	public String viewIdeas() {
 		logger.debug("Handle view ideas request.");
 		return "ideas/list";
 	}
 	
 	@RequestMapping(value="/ideas", method=RequestMethod.GET)
-	public List<Idea> listIdeas() {
-		return ideaService.getIdeas();
+	public List<Idea> listIdeas(Pageable pageable) {
+		return ideaService.getIdeas(pageable);
 	}
 	
 	@NotifyClients

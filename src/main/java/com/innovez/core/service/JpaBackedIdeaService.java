@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +33,9 @@ public class JpaBackedIdeaService implements IdeaService {
 	private Mapper mapper;
 	
 	@Override
-	public List<Idea> getIdeas() {
+	public List<Idea> getIdeas(Pageable pageable) {
 		logger.debug("Retrieve ideas.");
-		List<IdeaEntity> ideaEntities = ideaRepository.findAll();
+		Page<IdeaEntity> ideaEntities = ideaRepository.findAll(pageable);
 		List<Idea> ideas = new ArrayList<Idea>();
 		for(IdeaEntity entity : ideaEntities) {
 			ideas.add(mapper.map(entity, Idea.class));

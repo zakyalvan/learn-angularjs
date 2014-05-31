@@ -31,7 +31,10 @@ import com.innovez.core.notif.NotificationConfigurerAspect;
 public class CoreAppConfig {
 	@Bean
 	public DataSource dataSource() {
-		return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL).build();
+		return new EmbeddedDatabaseBuilder()
+			.setType(EmbeddedDatabaseType.HSQL)
+			.setName("learn-angularjs")
+			.build();
 	}
 	
 	@Bean
